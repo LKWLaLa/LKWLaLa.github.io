@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Currently a student in Flatiron School's Learn program!
+Blogging my experiences in Flatiron School's[Learn program!](https://learn.co)
 
 
 
