@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I am currently a student in the Flatiron School's [Learn Program]! (learn.co)
 
-### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+
+
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[lkwlala@gmail.com](mailto:lkwlala@gmail.com)
