@@ -17,6 +17,15 @@ Problem #1.  It takes quite a long time to request and return data from each ind
 
 Problem #2.  They're on to me!  Too many requests from my IP address, and menupages shuts me out.  (Fortunately, only temporarily at this point.)  To deal with this, as well as problem #1, I've narrowed my search down to only the first 20 restaurants listed in a particular neighborhood, but it makes the program much less useful.  I'd love to be able to search an entire neighborhood for safe food options, in one go.
 
+I've also hard-coded the allowable number of nuts/shellfish terms in my search, which ideally I'd like to update to be adjustable from the user interface.  And while I'm searching for nuts and shellfish, so the program is useful for **me**, it might be nice for the user to be able to select their own categories from a given list (gluten free, dairy free, etc).  
+
+Finally, in writing the code, I had a number of structure questions. (Is "modeling" the correct term?) I originally began with the idea of having three classes:  a CLI class, Scraper class, and Restaurant class.  However, in the end, I couldn't justify any reason to instantiate instances of restaurants, because I didn't really need to save my search results.  So my Restaurant class currently sits empty.  In my CLI and Scraper classes, I also had some confusion deciding whether to store information I would like to reuse in an instance variable or to encapsulate it in a helper method instead.  
+
+So much to learn, but it's all quite exciting!  
+And hey... my first Ruby gem is now officially published [here!] (https://rubygems.org/gems/eatable)  Always open to suggestions, and looking forward to my assessment and refactoring session!
+
+
+
 
 
 
