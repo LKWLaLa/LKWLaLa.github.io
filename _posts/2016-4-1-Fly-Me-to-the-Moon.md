@@ -1,2 +1,4 @@
 
-In other words... learning how to get a Sinatra based framework up and running.
+In other words... getting a Sinatra based framework up and running.
+
+
