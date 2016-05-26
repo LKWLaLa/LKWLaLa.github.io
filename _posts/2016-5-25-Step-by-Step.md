@@ -9,4 +9,10 @@ I thought it might be a good exercise to rewrite my Sinatra project using the Ra
 
 My project, called "Step-O," is an organizer for dance steps and the Youtube videos they may be found in.  Steps and videos have a many-to-many relationship, through a join table "timemarkers."  ("Timestamps" is already a macro in ActiveRecord, and I didn't want to duplicate the name.)  The timemarkers join table contains columns for the foreign keys step_id and video_id, as well as an additional column to store the actual timemarker field (the timestamp at which a step occurs in a video).  Oh boy, did I have a heck of a time setting this up.  
 
-In order to write to the additional field on the join table, I needed to create a nested form that was two layers deep.  Originally, I nested steps inside of a video, and then timemarkers inside of steps.  So what I had was something that looked like this:  Video > Steps > Timemarkers.  (Or Step > Videos > Timemarkers).  
+In order to write to the additional field on the join table, I needed to create a nested form - two layers deep.  Originally, I nested steps inside of a video, and then timemarkers inside of steps.  So what I had was something that looked like this:  Video > Steps > Timemarkers.  (Or Step > Videos > Timemarkers).  This however, does not work.  I may need to write an additional blog when I am better able to articulate this correctly, but my takeaway was this:
+
+A nested form can only create objects through a one-to-many or one-to-one relationship.  To say that nesting steps inside of videos (or vice versa) is creating objects through a many-to-many relationship is deceptive.  It might appear that way on the surface, but in actuality, we cannot associate the two without writing to a row on the Timemarkers join table.  So the functional order of nesting should actually be this:  Video (singular) > Timemarkers > Step (singular) or Step(singular) > Timemarkers > Video (singular).  A Video can have many Timemarkers (or the same video_id can be present on many rows of the join table), while a single row on the Timemarkers join table (because we will iterate through our individual Timemarkers rows before creating further nested associations) will associate with only one Step (or step_id).  
+
+
+
+
