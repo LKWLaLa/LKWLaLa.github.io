@@ -13,6 +13,12 @@ In order to write to the additional field on the join table, I needed to create 
 
 A nested form can only create objects through a one-to-many or one-to-one relationship.  To say that nesting steps inside of videos (or vice versa) is creating objects through a many-to-many relationship is deceptive.  It might appear that way on the surface, but in actuality, we cannot associate the two without writing to a row on the Timemarkers join table.  So the functional order of nesting should actually be this:  Video (singular) > Timemarkers > Step (singular) or Step(singular) > Timemarkers > Video (singular).  A Video can have many Timemarkers (or the same video_id can be present on many rows of the join table), while a single row on the Timemarkers join table (because we will iterate through our individual Timemarkers rows before creating further nested associations) will associate with only one Step (or step_id).  
 
+[This stackoverflow post](http://stackoverflow.com/questions/13506735/rails-has-many-through-nested-form) helped me immensely.  
+
+In addition to grappling with database associations, working on this project also taught me more about Devise, OmniAuth, error messages, AREL queries and how to filter my index page using scope methods and a dropdown menu, as well as dynamically embedding Youtube videos - lots of fun!  Honestly, there is so much more I could write about, but it will have to wait for another blog post. 
+
+On to more learning!
+
 
 
 
