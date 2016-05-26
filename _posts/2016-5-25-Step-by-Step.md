@@ -19,6 +19,8 @@ In addition to grappling with database associations, working on this project als
 
 On to more learning!
 
+(Here is a walkthrough of my app, if you're interested:  [Step-O Demo] (https://www.youtube.com/watch?v=V8nGyucaZwk))
+
 
 
 
