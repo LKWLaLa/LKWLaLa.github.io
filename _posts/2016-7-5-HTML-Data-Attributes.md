@@ -38,7 +38,7 @@ To tackle the first problem, I simply used a data attribute to store the id of t
 Then, in my videos javascript file, I wrote the following:
 
 ```javascript
- videoId = $(event.target).data().id; // This retrieves and stores the video id from the button element
+ videoId = $(event.target).data().id; // This retrieves and stores the video id from the button element, after the button has been clicked.  (This code is actually inside of an event listener (not shown).)
  
  $('li div.panel').each(function(index, body){
             if ($(this).find('.panel-body').data().id === videoId){// This finds the panel body that is in the same <li> as the button that was clicked.
