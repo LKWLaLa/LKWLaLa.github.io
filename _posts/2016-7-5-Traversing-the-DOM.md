@@ -18,6 +18,8 @@ Two different pages of my app contain list items, for which I wanted to build ne
 
 My goal was to be able to click on the "Show" button, and replace the existing data (video notes, etc) with the full video showpage, including the embeded version of the video itself.  The button should then change to say "Hide," and upon clicking it a second time, the original html should return.  Note - I did not simply want to append and toggle, but replace a whole section of html inside a particular list item with a different section of html.  
 
+![Video drop down in list item](../images/Video dropdown.png)
+
 Challenges:
 
 1. Once I have made my ajax request and returned the desired video show page data, how do I target which list element to change? 
