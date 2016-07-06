@@ -3,7 +3,7 @@ layout: post
 title: When traversing the DOM, it may be helpful to pack some HTML data attributes.
 ---
 
-Month six of my development training, and I am wrapping up project 4 of 5.  This time around, we were required to build dynamic features onto our existing Rails app (project 3), using jQuery and an Active Model Serialization JSON API.  
+Month six of my development training, and I am wrapping up project 4 of 5.  This time around, we were required to build dynamic features onto an existing Rails app (built for our previous assessment project), using jQuery and an Active Model Serialization JSON API.  
 
 Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  The opportunity to play with and apply concepts outside of the context of lesson exercises does wonders in helping them to finally "click."  
 
