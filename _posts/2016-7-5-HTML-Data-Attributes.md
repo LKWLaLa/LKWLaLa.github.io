@@ -7,7 +7,7 @@ Month six of my development training, and I am wrapping up project 4 of 5.  This
 
 Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  I often find my brain is able to solidify and fully understand concepts only after playing with them on my own terms, rather than in lesson exercises, and that happened to be the case in this situation again.  
 
-I'm sure there are best practices in navigating the DOM and I am still learning, but one technique I found very useful was the storage of information in HTML data attributes.  In my own case, I used the data attributes both as "breadcrumbs" to mark and find specific elements later, and as hidden storage for much larger chunks of code.
+I'm sure there are best practices in navigating the DOM and I am still learning, but one technique I found very useful was the storage of information in HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  In my own case, I used the data attributes both as "breadcrumbs" to mark and find specific elements later, and as hidden storage for much larger chunks of code.
 
 ###1. Using data attributes as "breadcrumbs":
 
@@ -27,7 +27,7 @@ Challenges I considered:
 1. Once I have made my ajax request and returned the desired video show page data, how do I target which list element to change? 
 2. Where can I save that list element's original html, so that I can fetch it and inject it back in, when the "Close" button is clicked?
 
-Both of these I addressed by using HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  
+
 
 To tackle the first problem, I simply stored the id of the video object that is located in the particuler list element I would like to affect with my jquery.  Below is the actual div (inside of my list element) that I would like to replace with the show page html.  You can see the addition of the data-id.  I also added the data-id information onto the "Show" button itself.
 
