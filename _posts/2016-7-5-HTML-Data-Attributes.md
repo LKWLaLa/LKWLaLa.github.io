@@ -29,7 +29,7 @@ Challenges I considered:
 
 
 
-To tackle the first problem, I simply used a data attribute to store the id of the video object that is located in the particuler list element I would like to affect with my jquery.  Below is the div (inside of that list element) containing content to be replaced with the show page html.  You can see the addition of the data-id.  I also added the data-id information onto the "Show" button itself.
+To tackle the first problem, I simply used a data attribute to store the id of the video object that is located in the particuler list element I would like to affect with my jQuery.  Below is the div (inside of that list element) containing content to be replaced with the show page html.  You can see the addition of the data-id.  I also added the data-id information onto the "Show" button itself.
 
 ` <div class="panel-body" data-id="<%= video.id%>">`
 
