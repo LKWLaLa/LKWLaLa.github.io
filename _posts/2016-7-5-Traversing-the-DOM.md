@@ -5,11 +5,11 @@ title: Traversing the DOM (tra-la-la-la)
 
 Month six of my development training, and I am wrapping up project 4 of 5.  This time around, we were required to build dynamic features onto our existing Rails app (project 3), using jQuery and an Active Model Serialization JSON API.  
 
-Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  I often find my brain is able to solidify and fully understand concepts only after playing with them on my own terms, rather than in lesson exercises, and that happened to be the case in this situation, again.  
+Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  I often find my brain is able to solidify and fully understand concepts only after playing with them on my own terms, rather than in lesson exercises, and that happened to be the case in this situation again.  
 
-I'm sure there are best practices in navigating the DOM, and I am still learning, but here are a few techniques I played with:
+I'm sure there are best practices in navigating the DOM and I am still learning, but here are a few techniques I played with:
 
-####1.  Using HTML data attributes
+###1.  Using HTML data attributes
 
 Two different pages of my app contain list items, for which I wanted to build nested, drop down information a user could toggle in and out of view.  The first page in discussion is a videos index page.  (My app is a dance step organizer, which assists one in organizing dance steps they would like to learn, and the YouTube videos they can be found in.)
 
@@ -17,5 +17,15 @@ Two different pages of my app contain list items, for which I wanted to build ne
 ![Videos index page](../images/Videos index.png)
 
 My goal was to be able to click on the "Show" button, and replace the existing data (video notes, etc) with the full video showpage, including the embeded version of the video itself.  The button should then change to say "Hide," and upon clicking it a second time, the original html should return.  Note - I did not simply want to append and toggle, but replace a whole section of html inside a particular list item with a different section of html.  
+
+Challenges:
+
+1.  Once I have made my ajax request and returned the desired video show page data, how do I target which <li> element to change? 
+
+2. Where can I save that <li> element's original html, so that I can fetch it and inject it back in, when the "Hide" button is clicked?
+
+
+
+
 
 
