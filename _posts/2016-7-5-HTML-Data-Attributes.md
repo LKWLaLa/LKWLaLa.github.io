@@ -11,7 +11,7 @@ I'm sure there are best practices in navigating the DOM and I am still learning,
 
 ###1. Using data attributes as "breadcrumbs":
 
-The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance step organizer, which assists one in organizing dance steps they would like to learn, and the YouTube videos they can be found in.)
+The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance step organizer, which assists users in organizing dance steps they would like to learn, and the YouTube videos those steps can be found in.)
 
 
 ![Videos index page](../images/Videos index.png)
