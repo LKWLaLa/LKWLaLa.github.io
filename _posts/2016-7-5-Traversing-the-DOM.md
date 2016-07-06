@@ -25,19 +25,21 @@ Challenges:
 
 Both of these I addressed by using HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  
 
-To tackle the first problem, I simply stored the id of the video object that is located in the particuler list element I would like to affect with my jquery.  Below is the actual div (inside of my list element) that I would like to replace with the show page html.  You can see the addition of the data-id.  
+To tackle the first problem, I simply stored the id of the video object that is located in the particuler list element I would like to affect with my jquery.  Below is the actual div (inside of my list element) that I would like to replace with the show page html.  You can see the addition of the data-id.  I also added the data-id information onto the "Show" button itself.
 
 ` <div class="panel-body" data-id="<%= video.id%>">`
+
+` <button id="trigger" data-id="<%= video.id%>">Show</button>`
 
 Then, in my javascript, I did the following:
 
 ```javascript
- videoId = $(event.target).data().id;
+ videoId = $(event.target).data().id; // This retrieves and stores the video id from the button element
  
  $('li div.panel').each(function(index, body){
-            if ($(this).find('.panel-body').data().id === videoId){
+            if ($(this).find('.panel-body').data().id === videoId){// This finds the panel body that is in the same <li> as the button that was clicked.
               var indexHTML = $(this).find('.panel-body').html();
-              $(this).find('.panel-body').html(replacementHTML);
+              $(this).find('.panel-body').html(replacementHTML); // And replace that html with my show page html
 ```
  
  More text...
