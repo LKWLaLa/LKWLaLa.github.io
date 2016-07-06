@@ -42,13 +42,19 @@ Then, in my javascript, I did the following:
  
  $('li div.panel').each(function(index, body){
             if ($(this).find('.panel-body').data().id === videoId){// This finds the panel body that is in the same <li> as the button that was clicked.
-              var indexHTML = $(this).find('.panel-body').html(); // Stores the existing HTML in a variable
+              var indexHTML = $(this).find('.panel-body').html(); // Stores the existing html in a variable
               $(this).find('.panel-body').html(replacementHTML); // And replaces that html with my show page html
 ```
  
 By inserting a data-id attribute into both the button element and the div containing the panel body, I was able to associate one with the other, and drop my new html into the correct list item.  (To note - iterating through a large number of elements to find the one with the correct id may not be the most effecient solution for large bodies of data.  However, in the case of my index page, I am using pagination to limit the number of list items that appear.)
 
 ###2. Using data attributes to store larger chunks of code:
+
+Once my "Show" button properly triggered the video drop down in the correct list item, there was still the challenge of how to get the original html back upon clicking "Close."  I could store the orginal html in a variable to retrieve later, but what if I have multiple list items "open?"  Do I declare multiple variables?  That would certainly become confusing and cluttered very quickly.  
+
+Instead, why not use a data attribute again, to store the old html inside of its own <li>?  This proved to be very handy!
+
+
 
 
 
