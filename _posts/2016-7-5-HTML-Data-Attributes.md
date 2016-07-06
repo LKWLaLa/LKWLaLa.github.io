@@ -52,7 +52,7 @@ By inserting a data-id attribute into both the button element and the div contai
 
 Once my "Show" button properly triggered the video drop down in the correct list item, there was still the challenge of how to get the original html back upon clicking "Close."  I could store the orginal html in a variable to retrieve later, but what if I have multiple list items "open?"  Do I declare multiple variables?  That would certainly become confusing and cluttered very quickly.  
 
-Instead, why not use a data attribute again, to store the old html inside of its own parent <li>?  This proved to be very handy!
+Instead, why not use a data attribute again, to store the old html inside of its own parent list element?  This proved to be very handy!
 
 
 ```javascript
@@ -62,6 +62,28 @@ $('li div.panel').each(function(index, body){
               $(this).find('.panel-body').html(replacementHTML);// Replaces that html with my show page html
               $(this).data( 'old_html', indexHTML ); // Stores the previous html as a data attribute within its parent <li>
  ```
+
+More explanation of this technique (and other helpful ideas) can be found in this [stackoverflow post.] (http://stackoverflow.com/questions/13040763/javascript-jquery-get-and-hold-elements-initial-html-content)  
+
+By storing the entire block of html as a data attribute, I was then able to retrieve and restore it at a later point in time (when the user clicks "Close."
+
+```javascript
+function videoCloseListener(){
+  $('li').on('click', '.revert', function(event){ //upon clicking the "Close" button
+     videoId = $(event.target).data(); // hold onto the data-id attribute stored in the button
+    $('li div.panel').each(function(index, body){
+      if ($(this).find('.panel-body').data().id === videoId.id){// find the panel body with the corresponding data-id
+        $(this).find('.panel-body').html($(this).data().old_html); // restore the original html
+        $(this).find('.revert').attr("class","trigger").text("Show"); // change the button from "Close" back to "Show"
+       };;
+    });
+  });
+}
+```
+
+
+
+
 
 
 
