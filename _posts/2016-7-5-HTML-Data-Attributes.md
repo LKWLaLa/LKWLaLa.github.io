@@ -50,7 +50,7 @@ By inserting a data-id attribute into both the button element and the div contai
 
 ###2. Using data attributes to store larger chunks of code:
 
-Once my "Show" button properly triggered the video drop down in the correct list item, there was still the challenge of how to get the original html back upon clicking "Close."  I could store the orginal html in a variable to retrieve later, but what if I have multiple list items "open?"  Do I declare multiple variables?  That would certainly become confusing and cluttered very quickly.  
+Once my "Show" button properly triggered the video drop down in the correct list item, there was still the challenge of how to get the original html back upon clicking "Close."  I could store the orginal html in a variable to retrieve later, but what if I have multiple list items open?  Do I declare multiple variables?  That would certainly become confusing and cluttered very quickly.  
 
 Instead, why not use a data attribute again, to store the old html inside of its own parent list element?  This proved to be very handy!
 
