@@ -7,9 +7,9 @@ Month six of my development training, and I am wrapping up project 4 of 5.  This
 
 Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  I often find my brain is able to solidify and fully understand concepts only after playing with them on my own terms, rather than in lesson exercises, and that happened to be the case in this situation again.  
 
-I'm sure there are best practices in navigating the DOM and I am still learning, but here are a few techniques I played with:
+I'm sure there are best practices in navigating the DOM and I am still learning, but one technique I found very useful was the storage of information in HTML data attributes.  In my own case, I used the data attributes both as breadcrumbs to mark and find specific elements later, and as hidden storage for much larger chunks of code.
 
-###1.  Using HTML data attributes
+###1. Using data attributes as breadcrumbs:
 
 Two different pages of my app contain list items, for which I wanted to build nested, drop down information a user could toggle in and out of view.  The first page in discussion is a videos index page.  (My app is a dance step organizer, which assists one in organizing dance steps they would like to learn, and the YouTube videos they can be found in.)
 
