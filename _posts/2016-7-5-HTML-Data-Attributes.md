@@ -63,9 +63,9 @@ $('li div.panel').each(function(index, body){
               $(this).data( 'old_html', indexHTML ); // Stores the previous html as a data attribute within its parent <li>
  ```
 
-More explanation of this technique (and other helpful ideas) can be found in this [stackoverflow post.] (http://stackoverflow.com/questions/13040763/javascript-jquery-get-and-hold-elements-initial-html-content)  
+More explanation of this technique (and other helpful ideas) can be found in this [Stackoverflow post.] (http://stackoverflow.com/questions/13040763/javascript-jquery-get-and-hold-elements-initial-html-content)  
 
-By storing the entire block of html as a data attribute, I was then able to retrieve and restore it at a later point in time (when the user clicks "Close."
+By storing the entire block of html as a data attribute, I was then able to retrieve and restore it at a later point in time (when the user clicks "Close.")
 
 ```javascript
 function videoCloseListener(){
@@ -82,6 +82,9 @@ function videoCloseListener(){
 ```
 
 
+I'm sure there are other (potentially even better) ways to achieve the same goals as illustrated above.  However, in my first attempt at incorporating jQuery, Ajax, and a JSON API into a personal project, I found the incorporation of HTML data attributes to be very useful!  Perhaps this blog post may help others who, like myself, are just starting out.  
+
+Thanks for stopping by!
 
 
 
