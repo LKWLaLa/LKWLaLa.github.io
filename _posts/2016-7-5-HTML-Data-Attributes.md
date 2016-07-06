@@ -5,7 +5,7 @@ title: When traversing the DOM, it may be helpful to pack some HTML data attribu
 
 Month six of my development training, and I am wrapping up project 4 of 5.  This time around, we were required to build dynamic features onto our existing Rails app (project 3), using jQuery and an Active Model Serialization JSON API.  
 
-Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  I often find my brain is able to solidify and fully understand concepts only after playing with them on my own terms, rather than in lesson exercises, and that happened to be the case in this situation again.  
+Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  The opportunity to play with and apply concepts outside of the context of lesson exercises does wonders in helping them to finally "click."  
 
 I'm sure there are best practices in navigating the DOM and I am still learning, but one technique I found very useful was the storage of information in HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  In my own case, I used the data attributes both as "breadcrumbs" to mark and find specific elements later, and as hidden storage for much larger chunks of code.
 
