@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Traversing the DOM (tra-la-la-la)
+title: When traversing the DOM, it may be helpful to pack some HTML data attributes.
 ---
 
 Month six of my development training, and I am wrapping up project 4 of 5.  This time around, we were required to build dynamic features onto our existing Rails app (project 3), using jQuery and an Active Model Serialization JSON API.  
