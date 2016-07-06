@@ -23,6 +23,8 @@ Challenges:
 1. Once I have made my ajax request and returned the desired video show page data, how do I target which list element to change? 
 2. Where can I save that list element's original html, so that I can fetch it and inject it back in, when the "Hide" button is clicked?
 
+More Text....
+
 
 
 
