@@ -11,13 +11,13 @@ I'm sure there are best practices in navigating the DOM and I am still learning,
 
 ###1. Using data attributes as "breadcrumbs":
 
-Two different pages of my app contain list items, for which I wanted to build nested, drop down information a user could toggle in and out of view.  The page I will focus on is a videos index page.  (My app is a dance step organizer, which assists one in organizing dance steps they would like to learn, and the YouTube videos they can be found in.)
+The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance step organizer, which assists one in organizing dance steps they would like to learn, and the YouTube videos they can be found in.)
 
 
 ![Videos index page](../images/Videos index.png)
 
 
-My goal was to be able to click the "Show" button, and replace the existing data (video notes, etc) with the full video showpage, including the embeded version of the video itself.  The button should then change to say "Hide," and upon clicking it a second time, the original html should return.  Note - I did not simply want to append and toggle, but replace a whole section of html inside a particular list item with a different section of html.  
+My goal was to be able to click the "Show" button, and replace the existing data (video notes, etc) with the full video showpage, including the embeded version of the video itself.  The button should then change to say "Close," and upon clicking it a second time, the original html should return.  Note - I did not simply want to append and toggle, but replace a whole section of html inside a particular list item with a different section of html.  
 
 
 ![Video drop down in list item](../images/Video dropdown.png)
@@ -25,7 +25,7 @@ My goal was to be able to click the "Show" button, and replace the existing data
 Challenges I considered:
 
 1. Once I have made my ajax request and returned the desired video show page data, how do I target which list element to change? 
-2. Where can I save that list element's original html, so that I can fetch it and inject it back in, when the "Hide" button is clicked?
+2. Where can I save that list element's original html, so that I can fetch it and inject it back in, when the "Close" button is clicked?
 
 Both of these I addressed by using HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  
 
@@ -46,7 +46,7 @@ Then, in my javascript, I did the following:
               $(this).find('.panel-body').html(replacementHTML); // And replaces that html with my show page html
 ```
  
-By leaving "breadcrumbs" - a data-id attribute -  in both the button element and the div containing the panel body, I was able to associate one with the other, and drop my new html into the correct list item.  (To note - iterating through a large number of elements to find the one with the correct id may not be the most effecient solution for large bodies of data.  However, in the case of my index page, I am using pagination to limit the number of list items that appear.)
+By inserting a data-id attribute into both the button element and the div containing the panel body, I was able to associate one with the other, and drop my new html into the correct list item.  (To note - iterating through a large number of elements to find the one with the correct id may not be the most effecient solution for large bodies of data.  However, in the case of my index page, I am using pagination to limit the number of list items that appear.)
 
 ###2. Using data attributes to store larger chunks of code:
 
