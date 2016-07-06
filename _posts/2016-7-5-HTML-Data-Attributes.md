@@ -29,13 +29,13 @@ Challenges I considered:
 
 
 
-To tackle the first problem, I simply stored the id of the video object that is located in the particuler list element I would like to affect with my jquery.  Below is the actual div (inside of my list element) that I would like to replace with the show page html.  You can see the addition of the data-id.  I also added the data-id information onto the "Show" button itself.
+To tackle the first problem, I simply used a data attribute to store the id of the video object that is located in the particuler list element I would like to affect with my jquery.  Below is the div (inside of that list element) containing content to be replaced with the show page html.  You can see the addition of the data-id.  I also added the data-id information onto the "Show" button itself.
 
 ` <div class="panel-body" data-id="<%= video.id%>">`
 
 ` <button id="trigger" data-id="<%= video.id%>">Show</button>`
 
-Then, in my javascript, I did the following:
+Then, in my videos javascript file, I wrote the following:
 
 ```javascript
  videoId = $(event.target).data().id; // This retrieves and stores the video id from the button element
@@ -43,7 +43,7 @@ Then, in my javascript, I did the following:
  $('li div.panel').each(function(index, body){
             if ($(this).find('.panel-body').data().id === videoId){// This finds the panel body that is in the same <li> as the button that was clicked.
               var indexHTML = $(this).find('.panel-body').html(); // Stores the existing html in a variable
-              $(this).find('.panel-body').html(replacementHTML); // And replaces that html with my show page html
+              $(this).find('.panel-body').html(replacementHTML); // And replaces that html with my video show page html
 ```
  
 By inserting a data-id attribute into both the button element and the div containing the panel body, I was able to associate one with the other, and drop my new html into the correct list item.  (To note - iterating through a large number of elements to find the one with the correct id may not be the most effecient solution for large bodies of data.  However, in the case of my index page, I am using pagination to limit the number of list items that appear.)
