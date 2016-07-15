@@ -7,11 +7,11 @@ Month six of my development training, and I am wrapping up project 4 of 5.  This
 
 Although it took a while to wrap my head around the lessons in this unit, working with Ajax and jQuery in my project was quite fun.  The opportunity to play with and apply concepts outside of the context of lesson exercises does wonders in helping them to finally "click."  
 
-I'm sure there are best practices in navigating the DOM and I am still learning, but one technique I found very useful was the storage of information in HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  In my own case, I used the data attributes both as "breadcrumbs" to mark and find specific elements later, and as hidden storage for much larger chunks of code.
+One technique I found very useful in manipulation of the DOM, was the storage of information in HTML [data attributes.](http://www.w3schools.com/tags/att_global_data.asp)  I used the data attributes both as "breadcrumbs" to mark and find specific elements later, and as hidden storage for much larger chunks of code.
 
 ###1. Using data attributes as "breadcrumbs":
 
-The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance step organizer, which assists users in organizing dance steps they would like to learn, and the YouTube videos those steps can be found in.)
+The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance steps organizer, which assists users in organizing dance steps they would like to learn, and the YouTube videos those steps can be found in.)
 
 
 ![Videos index page](../images/Videos index.png)
@@ -38,7 +38,7 @@ To tackle the first problem, I simply used a data attribute to store the id of t
 Then, in my videos javascript file, I wrote the following:
 
 ```javascript
- videoId = $(event.target).data().id; // This retrieves and stores the video id from the button element, after the button has been clicked.  (This code is actually inside of an event listener, which is not shown.)
+ var videoId = $(event.target).data().id; // This retrieves and stores the video id from the button element, after the button has been clicked.  (This code is actually inside of an event listener, which is not shown.)
  
  $('li div.panel').each(function(index, body){
             if ($(this).find('.panel-body').data().id === videoId){// This finds the panel body that is in the same <li> as the button that was clicked.
@@ -70,9 +70,9 @@ By storing the entire block of html as a data attribute, I was then able to retr
 ```javascript
 function videoCloseListener(){
   $('li').on('click', '.revert', function(event){ //upon clicking the "Close" button
-     videoId = $(event.target).data(); // hold onto the data-id attribute stored in the button
+     var videoId = $(event.target).data().id; // hold onto the data-id attribute stored in the button
     $('li div.panel').each(function(index, body){
-      if ($(this).find('.panel-body').data().id === videoId.id){// find the panel body with the corresponding data-id
+      if ($(this).find('.panel-body').data().id === videoId){// find the panel body with the corresponding data-id
         $(this).find('.panel-body').html($(this).data().old_html); // restore the original html
         $(this).find('.revert').attr("class","trigger").text("Show"); // change the button from "Close" back to "Show"
        };;
@@ -82,7 +82,7 @@ function videoCloseListener(){
 ```
 
 
-I'm sure there are other (potentially even better) ways to achieve the same goals as illustrated above.  However, in my first attempt at incorporating jQuery, Ajax, and a JSON API into a personal project, I found the incorporation of HTML data attributes to be very useful!  Perhaps this blog post may help others who, like myself, are just starting out.  
+I'm sure there are other ways to achieve the same goals as illustrated above.  However, in my first attempt at incorporating jQuery, Ajax, and a JSON API into a personal project, I found this approach to work quite well!  Perhaps this blog post may help others who are trying to accomplish similar results.  
 
 Thanks for stopping by!
 
