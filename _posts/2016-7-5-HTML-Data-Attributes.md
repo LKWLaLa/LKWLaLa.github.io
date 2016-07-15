@@ -11,7 +11,7 @@ One technique I found very useful in manipulation of the DOM, was the storage of
 
 ###1. Using data attributes as "breadcrumbs":
 
-The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance steps organizer, which assists users in organizing steps they would like to learn, and the YouTube videos those steps can be found in.)
+The examples below will all focus on the videos index page of my app, for which I wanted to build nested, drop down information a user could toggle in and out of view.   (My app is a dance steps organizer organizer, which helps users keep track of steps they would like to practice and the videos they may be found in.)
 
 
 ![Videos index page](../images/Videos index.png)
