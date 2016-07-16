@@ -3,7 +3,6 @@ layout: post
 title: On Becoming a Software Developer
 ---
 
-Why?
 
 ###I did not grow up tinkering with the command line, or with a passion for video games.  
 
@@ -13,4 +12,3 @@ Why?
 
 ###And find a way to bring people together.
 
-  
