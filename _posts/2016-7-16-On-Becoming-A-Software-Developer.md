@@ -3,14 +3,15 @@ layout: post
 title: On Becoming a Software Developer
 ---
 
-(Or spending the greater part of a year as a hermit, in hopes of promoting human connection.)
+“It is not enough to be industrious; so are the ants. What are you industrious about?” 
+― Henry David Thoreau
 
 
-##I did not grow up tinkering with the command line, or with a passion for video games.  
+###1. I did not grow up tinkering with the command line, or with a passion for video games.  
 
-##However - I do love to create, invent, and explore.
+###2. However - I do love to create, invent, and explore.
 
-##I love learning, and want to understand our world.
+###3. I love learning, and want to understand our world.
 
-##And find a way to bring people together.
+###4. And find a way to bring people together.
 
