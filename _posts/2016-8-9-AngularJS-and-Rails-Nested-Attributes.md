@@ -40,7 +40,9 @@ this.updateStory = function (id, author, body) {
    };
 ```
 
-If this seems a bit unweidly, Rails ActionController has another bit of "magic" you can optionally add to the API controller, `wrap_parameters include: [:contributions_attributes]` which allows requests to be submitted without specifiying the root element:
+If this seems a bit unweidly, Rails ActionController has another bit of "magic" that can optionally be added to the API controller, 
+`wrap_parameters include: [:contributions_attributes]` 
+which allows requests to be submitted without specifiying the root element:
 
 ```javascript
 this.updateStory = function (id, author, body) {
@@ -52,5 +54,8 @@ this.updateStory = function (id, author, body) {
      });
    };
 ```  
+
+And with that, my Angular service was able to send the appropriate params to the Rails API, and viola - the story update action is writing to two tables!
+
 
 
