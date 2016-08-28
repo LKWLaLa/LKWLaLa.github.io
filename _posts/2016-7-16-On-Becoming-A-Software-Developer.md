@@ -10,7 +10,7 @@ Discussion of what is or is not artistic aside, I am pursuing development not in
 
 I am a proponent of accessible technology, growing up with autism in my family, as well as spending a significant amount of time with friends and mentors in the Deaf community.  I feel hope and excitement at the possibility of work that could break down barriers and bring people together.  
 
-Not to mention, coding itself - beginning with a blank slate and creating something useful out of nothing - is a process that requires curiousity, open-mindedness, logic, empathy, and dare I say even - artfulness.  J. Bradford Hipps, a software developer and author, recently submitted a piece for the New York Times entitled [*To Write Better Code, Read Virginia Woolf*](http://www.nytimes.com/2016/05/22/opinion/sunday/to-write-software-read-novels.html?_r=0), in which he writes,
+Not to mention, coding itself - beginning with a blank slate and creating something useful out of nothing - is a process that requires curiousity, open-mindedness, logic, empathy, and dare I say even - artfulness.  Recently, I read a New York Times piece by softward developer J. Bradford Hipps, [*To Write Better Code, Read Virginia Woolf*](http://www.nytimes.com/2016/05/22/opinion/sunday/to-write-software-read-novels.html?_r=0), in which he writes:
 
 
 “The developer stands before her source code editor in the same way the author confronts the blank page...When the module is finished or the pages complete, their quality is judged against many of the same standards: elegance, concision, cohesion; the discovery of symmetries where none were seen to exist. Yes, even beauty."
