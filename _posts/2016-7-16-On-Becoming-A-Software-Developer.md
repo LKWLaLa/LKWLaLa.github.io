@@ -4,7 +4,11 @@ title: On Becoming a Software Developer
 ---
 
 
-The other day I was introduced to a woman who, in a polite exchange of pleasantries insisted, "So, tell me about your career!"  After listing off a short history of my past endeavors - music, dance, arts/business administration, sign language interpreting - I explained my current path to becoming a developer, as well as my excitement at having completed a major project in the past week.  With delight and amusement in her eyes, she declared, "Well, isn't that just the antithesis of creativity!"
+The other day I was introduced to a woman who, in a polite exchange of pleasantries insisted, "So, tell me about your career!"  After listing off history of my past endeavors (music, dance, arts/business administration, sign language interpreting) I explained my current path to becoming a developer, as well as my excitement at having completed a major project in the past week.  With delight and amusement she declared, "Well, isn't that just the antithesis of creativity!"  Taking another sip of her drink, she shared anecdotes of friends who had made grand exits from the arts world, escaping to accounting or otherwise.  "So interesting!"
+
+Discussion of the importance and application of arts education aside, I am pursuing development not in spite of, but *because* of my attraction to creative work.
+
+
 
 
 
