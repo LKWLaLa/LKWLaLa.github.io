@@ -9,7 +9,7 @@ There are many resources out there to assist with pagination of an Angular app, 
 
 ####The basic pagination logic:
 
-In my first attempt at implementing pagination, I added controller logic which would slice my index page data (a collection of stories) and return only my designated number of stories per page.  Considering the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
+In my first attempt at implementing pagination, I added controller logic which would slice my index page data (a collection of stories) and return only my designated number of stories per page.  Depending on the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
 
 ```javascript
 ctrl.paginate = function () {
