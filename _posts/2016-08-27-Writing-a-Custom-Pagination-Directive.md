@@ -102,6 +102,14 @@ With filtering moved into the controller and the result of that filtering passed
 <ul> 
 ```
 
+At that point in my logic, I realized there was still one more problem.  When a user types into the search input (or any filter), the pagination should begin at page one, regardless of the page the user is currently on.  If a user is on page 3, searches for stories about 'dogs', what if there are only 2 dog stories?  
+
+To remedy this, it is worth noting I also wrote a resetPageData() method which I called at the end of refilter(), however ultimately this was implemented in a different way when I reached the final stage of this process: refactoring ALL of the above logic into a custom directive.
+
+## Moving all of this into a custom pagination directive
+
+ 
+
 
 
 
