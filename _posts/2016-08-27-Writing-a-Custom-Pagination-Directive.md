@@ -92,12 +92,10 @@ ctrl.displayedItems = ctrl.filteredStories.slice(begin,end);
 
 With filtering moved into the controller and the result of that filtering passed into the pagination method, the more desired value of `ctrl.displayedItems` can now be passed into the `ng-repeat`:
 
-```angular
+```html
 <ul ng-repeat="story in ctrl.displayedStories">   
     <li>
-      <a ui-sref="story({ id: story.id })">
-        {{story.title}}
-      </a>
+      <a ui-sref="story({ id: story.id })">{{story.title}}</a>
     </li>
 <ul> 
 ```
