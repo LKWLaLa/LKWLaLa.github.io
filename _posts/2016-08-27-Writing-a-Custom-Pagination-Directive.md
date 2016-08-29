@@ -34,6 +34,8 @@ I simply needed to execute `ctrl.paginate()` in my controller, so that the first
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
 
-It only searched/filtered the 12 items in the current view.  Ugh...of course.    
+It only searched/filtered the 12 items in the current view.  Ugh...of course.  I also had an orderBy, as well as an additional custom filter which did the same.  I was adding the filters in the standard way to my 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` I was passing into `ng-repeat`.  
+
+The solution?  I would need to apply my filters **first** and **then** apply my pagination.    
 
 
