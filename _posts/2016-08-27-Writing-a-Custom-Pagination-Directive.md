@@ -30,10 +30,10 @@ ctrl.nextPage = function() {
 }
 ```  
 
-I simply needed to execute `ctrl.paginate()` in my controller, so that the first pagination would occur as soon as my controller was initialized for that view.  
+I simply needed to execute `ctrl.paginate()` in my controller, so that the first pagination would occur as soon as my controller was initialized for that view.  `ctrl.displayedItems` would be the value I would pass into my `ng-repeat` to add only those items to the DOM.
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
 
-It only searched/filtered the 12 items in the current view.    
+It only searched/filtered the 12 items in the current view.  Ugh...of course.    
 
 
