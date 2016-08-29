@@ -38,7 +38,7 @@ I'd execute `ctrl.paginate()` in my controller, so the first pagination would oc
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would be a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
 
-It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter - all of which would no longer work correctly.  All filters were presently added in the standard way to the 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` passed into `ng-repeat`.  
+It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter - all of which would no longer work correctly.  All filters were presently added in the standard way to the `ng-repeat` element, so the only items I had access to were the 12 `ctrl.displayedItems` passed into `ng-repeat`.  
 
 The solution?  Apply the filters **first** and **then** paginate.   
 
@@ -81,7 +81,28 @@ For example:
 </input>  
 ```
 
-Then `ctrl.filteredStories` (in the first code example) becomes the starting point / value passed in for pagination. Whew. 
+Then `ctrl.filteredStories` (in the code example above this one) becomes the starting point / value passed in for pagination. 
+
+```javascript
+ctrl.displayedItems = ctrl.filteredStories.slice(begin,end);
+```
+
+
+##Resetting to page #1
+
+With filtering moved into the controller, and the result of that filtering passed into the pagination method, the more desired value of `ctrl.displayeditems` can be passed into the `ng-repeat`:
+
+```html
+<ul ng-repeat="story in ctrl.displayedStories">   
+    <li>
+      <a ui-sref="story({ id: story.id })">
+        {{story.title}}
+      </a>
+    </li>
+<ul> 
+```
+
+
 
 
 
