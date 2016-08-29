@@ -38,7 +38,7 @@ I simply needed to execute `ctrl.paginate()` in my controller, so that the first
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would be a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
 
-It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter.  I was adding the filters in the standard way to my 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` I was passing into `ng-repeat`.  
+It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter - all of which would no longer work correctly.  All filters were presently added in the standard way to the 'ng-repeat' element, so the only items I had access to were the 12 displayedItems passed into `ng-repeat`.  
 
 The solution?  Apply the filters **first** and **then** paginate.   
 
@@ -53,7 +53,7 @@ function myCtrl($scope, $filter)
 }
 ```
 
-Because my index page contained *many* filters, I researched how to chain them together, and ended up with the following method:
+Because my particular index page implements many different filters, I researched how to chain them together, and ended up with the following method:
 
 ```javascript
 //default value includes all stories
@@ -69,6 +69,19 @@ ctrl.refilter = function () {
   ctrl.filteredStories = filtered;
 }  
 ```
+
+From the view, `refilter()` gets called using the `ng-change` directive, whenever one of the input boxes triggers the $digest cycle.
+For example:
+
+```html
+<!-- Note: I am using the controllerAs syntax here-->
+ <input ng-model="ctrl.search" 
+        ng-change="ctrl.refilter()"                
+        placeholder="Search">
+</input>  
+```
+
+Then `ctrl.filteredStories` (in the first code example) becomes the starting point / value passed in for pagination.  
 
 
 
