@@ -9,7 +9,7 @@ There are many resources out there to assist with pagination of an Angular app, 
 
 ####The basic pagination logic:
 
-In my first attempt at implementing pagination, I added logic into my controller which would slice my index page data (a collection of stories) and return only my designated number of stories per page.  Considering the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
+In my first attempt at implementing pagination, I added controller logic which would slice my index page data (a collection of stories) and return only my designated number of stories per page.  Considering the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
 
 ```javascript
 ctrl.paginate = function () {
@@ -18,7 +18,7 @@ ctrl.paginate = function () {
   ctrl.displayedItems = ctrl.allItems.slice(begin,end);
 };
 ```   
-Clicking a button or link in the view would call one of the following methods to update the page number:
+Clicking a button or link in the view would call one of the following methods to update the page number and then re-paginate:
 
 ```javascript
 ctrl.previousPage = function () {
@@ -38,7 +38,7 @@ I simply needed to execute `ctrl.paginate()` in my controller, so that the first
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would be a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
 
-It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, there was also an orderBy, as well as an additional custom filter to consider.  I was adding the filters in the standard way to my 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` I was passing into `ng-repeat`.  
+It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter.  I was adding the filters in the standard way to my 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` I was passing into `ng-repeat`.  
 
 The solution?  Apply the filters **first** and **then** paginate.   
 
