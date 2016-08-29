@@ -90,7 +90,7 @@ ctrl.displayedItems = ctrl.filteredStories.slice(begin,end);
 
 ##Resetting to page #1
 
-With filtering moved into the controller, and the result of that filtering passed into the pagination method, the more desired value of `ctrl.displayeditems` can be passed into the `ng-repeat`:
+With filtering moved into the controller and the result of that filtering passed into the pagination method, the more desired value of `ctrl.displayedItems` can now be passed into the `ng-repeat`:
 
 ```html
 <ul ng-repeat="story in ctrl.displayedStories">   
