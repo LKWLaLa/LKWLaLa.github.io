@@ -74,7 +74,7 @@ From the view, `refilter()` gets called using the `ng-change` directive, wheneve
 For example:
 
 ```html
-<!-- Note: I am using the controllerAs syntax here-->
+<!-- Note: I am using controller as syntax here-->
  <input ng-model="ctrl.search" 
         ng-change="ctrl.refilter()"                
         placeholder="Search">
