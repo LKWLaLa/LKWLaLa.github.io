@@ -106,9 +106,9 @@ At that point in my logic, I realized there was still one more problem.  When a 
 
 To remedy this, it is worth noting I also wrote a resetPageData() method which I called at the end of refilter(), however ultimately this was implemented in a different way when I reached the final stage of this process: refactoring ALL of the above logic into a custom directive.
 
-## Moving all of this into a custom pagination directive
+## Moving all of this into a #custom pagination directive
 
- 
+
 
 
 
