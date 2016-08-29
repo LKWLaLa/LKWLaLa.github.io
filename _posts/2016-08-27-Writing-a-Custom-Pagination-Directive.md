@@ -3,7 +3,7 @@ layout: post
 title: Writing a Custom Pagination Directive in Angular
 ---
 
-There are many resources out there to assist with pagination of an Angular app, one example being [Michael Bromley's pagination directive](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination), a nice "plug-n-play" solution for divvying up your index items. While normally one would not re-invent the wheel unnecessarily, I decided to implement my own pagination in my latest project for the sake of learning.  Below is my take away from the experience.
+There are many resources out there to assist with pagination of an Angular app, one example being [Michael Bromley's pagination directive](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination), a nice "plug-n-play" solution for divvying up your index items. While normally one would not re-invent the wheel unnecessarily, I decided to implement my own pagination in my latest project for the sake of learning.  Below is my step through and take away from the experience.
 
 ##Applying both pagination and filtering
 
@@ -43,7 +43,6 @@ The solution?  Apply the filters **first** and **then** paginate.
 In order to pass pre-filtered, pre-paginated data to the `ng-repeat` element, I moved my filtering into the controller.  This was achieved by using Angular's $filter API, which can be injected as a controller dependency.  Its use works like so:
 
 ```javascript
-
 function myCtrl($scope, $filter)
 {
     $filter('filtername')(arg1,arg2);
