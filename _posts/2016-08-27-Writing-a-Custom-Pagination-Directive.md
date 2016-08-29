@@ -92,7 +92,7 @@ ctrl.displayedItems = ctrl.filteredStories.slice(begin,end);
 
 With filtering moved into the controller and the result of that filtering passed into the pagination method, the more desired value of `ctrl.displayedItems` can now be passed into the `ng-repeat`:
 
-```html
+```angular
 <ul ng-repeat="story in ctrl.displayedStories">   
     <li>
       <a ui-sref="story({ id: story.id })">
@@ -106,7 +106,9 @@ At that point in my logic, I realized there was still one more problem.  When a 
 
 To remedy this, it is worth noting I also wrote a resetPageData() method which I called at the end of refilter(), however ultimately this was implemented in a different way when I reached the final stage of this process: refactoring ALL of the above logic into a custom directive.
 
-# Refactoring into a custom directive
+## Now refactoring into a custom directive
+
+
 
 
 
