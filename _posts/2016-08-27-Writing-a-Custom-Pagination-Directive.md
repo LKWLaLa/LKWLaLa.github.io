@@ -44,7 +44,7 @@ The solution?  Apply the filters **first** and **then** paginate.
 
 ##Filtering from within the controller
 
-In order to pass pre-filtered, pre-paginated data to the `ng-repeat` element, I moved my filtering into the controller.  This was achieved by using Angular's $filter API, which can be injected as a controller dependency.  Its use works like so:
+In order to pass pre-filtered, pre-paginated data to the `ng-repeat` element, I moved my filtering into the controller.  This was achieved by using Angular's $filter API, which can be injected as a controller dependency.  It works like so:
 
 ```javascript
 function myCtrl($scope, $filter)
@@ -56,7 +56,8 @@ function myCtrl($scope, $filter)
 Because my index page contained *many* filters, I researched how to chain them together, and ended up with the following method:
 
 ```javascript
-ctrl.filteredStories = stories.data; //default value includes all stories
+//default value includes all stories
+ctrl.filteredStories = stories.data; 
 
 ctrl.refilter = function () {
   filtered = $filter('filter')(filtered, ctrl.search);
