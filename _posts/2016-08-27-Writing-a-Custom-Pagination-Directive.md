@@ -36,6 +36,37 @@ Now at first glance, that seemed to produce the behavior I was looking for.  I h
 
 It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, there was also an orderBy, as well as an additional custom filter to consider.  I was adding the filters in the standard way to my 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` I was passing into `ng-repeat`.  
 
-The solution?  Apply the filters **first** and **then** paginate.    
+The solution?  Apply the filters **first** and **then** paginate.   
+
+##Filtering from within the controller
+
+In order to pass pre-filtered, pre-paginated data to the `ng-repeat` element, I moved my filtering into the controller.  This was achieved by using Angular's $filter API, which can be injected as a controller dependency.  Its use works like so:
+
+```javascript
+
+function myCtrl($scope, $filter)
+{
+    $filter('filtername')(arg1,arg2);
+}
+```
+
+Because my index page contained *many* filters, I researched how to chain them together, and ended up with the following method:
+
+```javascript
+ctrl.filteredStories = stories.data; //default value includes all stories
+
+ctrl.refilter = function () {
+  filtered = $filter('filter')(filtered, ctrl.search);
+  //apply the second filter to the result of the first
+  filtered = $filter('greaterThan')(filtered, ctrl.minContributions); 
+  //apply the third filter to the result of the second
+  filtered = $filter('selectedOrder')(filtered, ctrl.sortBy);
+  //now we have a filtered collection that can be paginated
+  ctrl.filteredStories = filtered;
+}  
+```
+
+
+
 
 
