@@ -60,7 +60,7 @@ Because my index page contained *many* filters, I researched how to chain them t
 ctrl.filteredStories = stories.data; 
 
 ctrl.refilter = function () {
-  filtered = $filter('filter')(filtered, ctrl.search);
+  filtered = $filter('filter')(stories.data, ctrl.search);
   //apply the second filter to the result of the first
   filtered = $filter('greaterThan')(filtered, ctrl.minContributions); 
   //apply the third filter to the result of the second
