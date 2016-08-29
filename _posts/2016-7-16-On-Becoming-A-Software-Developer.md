@@ -10,7 +10,7 @@ Discussion of what *is* or is not artistic aside, I am pursuing development not 
 
 Not to mention, coding itself - beginning with a blank slate and creating something useful out of nothing - is a process that requires curiousity, open-mindedness, logic, empathy, and dare I say even artfulness.  A recent New York Times piece by software developer J. Bradford Hipps [(*To Write Better Code, Read Virginia Woolf*)](http://www.nytimes.com/2016/05/22/opinion/sunday/to-write-software-read-novels.html?_r=0) shares this sentiment.  Given this, I find the process super engaging and fun.  There is so much to learn, and seeing the result of your hard work can be gratifying, if not even addictive.
 
-On the note of my conversation with the woman above, I think it is safe to say that development is yet a misunderstood field.  Even with the rapid advance of technology in recent years, code is just now trickling into school curriculums, beginning to break the long standing assumptions of who should and should not be a developer.  I'm excited to see how the field continues to grow, and to be involved in that growth.  There is so much potential! Looking forward to the creative process and to contributing in whatever ways I can. 
+On the note of my conversation with the woman above, I think it is safe to say that development is yet a misunderstood field.  Even with the rapid advance of technology in recent years, code is just now trickling into school curriculums, beginning to challenge the presumptions of who should and should not be a developer.  I'm excited to see how the field continues to grow, and to be involved in that growth.  There is so much potential! Looking forward to the creative process and to contributing in whatever ways I can. 
 
 
 
