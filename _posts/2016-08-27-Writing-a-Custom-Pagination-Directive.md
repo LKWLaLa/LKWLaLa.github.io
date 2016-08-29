@@ -9,7 +9,7 @@ There are many resources out there to assist with pagination of an Angular app, 
 
 ####The basic pagination logic:
 
-In my first attempt at implementing pagination, I added controller logic which would slice my index page data (a collection of stories) and return only my designated number of stories per page.  Depending on the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
+In my first attempt at implementing pagination, I added controller logic which would slice the index page data (a collection of stories) and return only the designated number of stories per page.  Depending on the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
 
 ```javascript
 ctrl.paginate = function () {
@@ -32,13 +32,13 @@ ctrl.nextPage = function() {
 }
 ```  
 
-I simply needed to execute `ctrl.paginate()` in my controller, so that the first pagination would occur as soon as my controller was initialized for that view.  `ctrl.displayedItems` would be the value I would pass into my `ng-repeat` to add only those items to the DOM.
+I'd execute `ctrl.paginate()` in my controller, so the first pagination would occur as soon as my controller was initialized for that view.  The `ctrl.displayedItems` value would be passed into `ng-repeat` to add only those items to the DOM.
 
 ####Filtering:
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would be a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
 
-It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter - all of which would no longer work correctly.  All filters were presently added in the standard way to the 'ng-repeat' element, so the only items I had access to were the 12 displayedItems passed into `ng-repeat`.  
+It only searched/filtered the 12 items in the current view.  Ugh...of course.  And in addition to the search input, I was also implementing an orderBy drop down selector, as well as another custom filter - all of which would no longer work correctly.  All filters were presently added in the standard way to the 'ng-repeat' element, so the only items I had access to were the 12 `displayedItems` passed into `ng-repeat`.  
 
 The solution?  Apply the filters **first** and **then** paginate.   
 
@@ -70,7 +70,7 @@ ctrl.refilter = function () {
 }  
 ```
 
-From the view, `refilter()` gets called using the `ng-change` directive, whenever one of the input boxes triggers the $digest cycle.
+From the view, `refilter()` gets called using the `ng-change` directive whenever one of the input boxes triggers the $digest cycle.
 For example:
 
 ```html
@@ -81,7 +81,7 @@ For example:
 </input>  
 ```
 
-Then `ctrl.filteredStories` (in the first code example) becomes the starting point / value passed in for pagination.  
+Then `ctrl.filteredStories` (in the first code example) becomes the starting point / value passed in for pagination. Whew. 
 
 
 
