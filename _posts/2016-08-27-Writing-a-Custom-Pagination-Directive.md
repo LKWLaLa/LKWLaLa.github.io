@@ -7,4 +7,14 @@ There are many resources out there to assist with pagination of an Angular app, 
 
 ##Applying both pagination and filtering
 
+In my first attempt at implementing pagination, I added logic into my controller which would slice my index page data (a collection of stories) and return only my designated number of stories per page.  Considering the current page number, the beginning and ending index numbers in the slice would change accordingly, like so:
+
+```javascript
+ctrl.paginate = function () {
+  var begin = ((ctrl.currentPageNo - 1) * ctrl.itemsPerPage);
+  var end = begin + ctrl.itemsPerPage;
+  ctrl.displayedItems = ctrl.allItems.slice(begin,end);
+};
+```   
+
 
