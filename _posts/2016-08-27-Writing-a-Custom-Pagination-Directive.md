@@ -284,9 +284,7 @@ function MyPagination() {
     };
 }
  ``` 
- And there we have it - hooray!
-
- When deciding to implement my own pagination logic, I did not anticipate the number of considerations that would be necessary along the way.  This was quite a process!  However, the journey was valuable and I learned quite a bit.  Hopefully this info will be helpful for others as well.  
+ And there we have it - hooray! A reusable custom pagination directive. 
 
 
 
