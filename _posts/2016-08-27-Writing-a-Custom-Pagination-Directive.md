@@ -144,12 +144,12 @@ When added to a view, the pagination directive element will render html for the 
     </div>
 ```  
 
-On my index view template, where I want the buttons to appear, I add my new pagination element:
+On my index view template, where I want the buttons to appear, I add my new pagination directive element:
 
 ```html
 <my-pagination
       all-items="stories.filteredStories"
-      current-items="stories.displayedStories"
+      current-items="stories.displayedItems"
       items-per-page=12
       ></my-pagination>
 
