@@ -163,7 +163,9 @@ I've added an additional property `ctrl.displayedItems` onto my original stories
 ctrl.displayedStories = [];
 ```
 
-(Side note: Setting this default value to be an empty array actually prevents the page from flashing when it loads, as `ng-repeat` adds items to the DOM before Angular's other directives are linked to the html.)
+*(Side note: Setting this default value to be an empty array actually prevents the page from flashing when it loads, as `ng-repeat` adds items to the DOM before Angular's other directives are linked to the html.)*
+
+
 
 
 
