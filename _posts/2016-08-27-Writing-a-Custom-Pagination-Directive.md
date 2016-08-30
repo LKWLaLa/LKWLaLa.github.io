@@ -34,6 +34,14 @@ ctrl.nextPage = function() {
 
 I'd execute `ctrl.paginate()` in my controller, so the first pagination would occur as soon as my controller was initialized for that view.  The `ctrl.displayedItems` value would be passed into `ng-repeat` to add only those items to the DOM.
 
+```html
+<ul ng-repeat="story in ctrl.displayedItems">   
+    <li>
+      <a ui-sref="story({ id: story.id })">{% raw %}{{story.title}}</a>
+    </li>
+<ul> 
+```
+
 ####Filtering:
 
 Now at first glance, that seemed to produce the behavior I was looking for.  I had decided there would be a maximum of 12 stories per page, and when I clicked the "next" button, the next set of 12 stories appeared.  Super cool.  This was working.  Then I attempted to type something into my search input...
