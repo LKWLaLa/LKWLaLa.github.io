@@ -144,7 +144,7 @@ When added to a view, the pagination directive element will render html for the 
     </div>
 ```  
 
-On my index view template, where I want the buttons to appear, I add my new pagination directive element:
+On my stories index view template, where I want the buttons to appear, I add my new pagination directive element:
 
 ```html
 <my-pagination
