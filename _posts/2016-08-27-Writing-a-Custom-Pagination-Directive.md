@@ -165,7 +165,7 @@ The default value set in the stories controller is:
 ctrl.displayedStories = [];
 ```
 
-*(Side note: Setting this default value to be an empty array actually prevents the page from flashing when it loads, as `ng-repeat` adds items to the DOM before Angular's other directives are linked to the html.  Meaning, the `ng-repeat` will execute and display whatever has been passed in before the pagination occurs.)*
+*(Side note: Setting this default value to be an empty array actually prevents the page from flashing when it loads, as `ng-repeat` adds items to the DOM before Angular's other directives are linked to the html.  Meaning, the `ng-repeat` will execute and display whatever has been passed in before the pagination actually occurs.)*
 
 Inside of my pagination directive file, I bind the the values to the directive's scope, and move the pagination logic from the stories controller into the pagination directive's own controller:
 
@@ -272,7 +272,7 @@ function MyPagination() {
         //if allItems changes (because a filter is run and
         //the value of ctrl.filteredStories changes)
         //pagination should reset
-        
+
         $scope.$watch('allItems', function() {
           $scope.currentPageNo = 1;
           $scope.updateTotalPages();
@@ -284,6 +284,9 @@ function MyPagination() {
     };
 }
  ``` 
+ And there we have it - hooray!
+
+ When deciding to implement my own pagination logic, I did not anticipate the number of considerations that would be necessary along the way.  This was quite a process!  However, the journey was valuable and I learned quite a bit.  Hopefully this info will be helpful for others as well.  
 
 
 
