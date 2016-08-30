@@ -148,14 +148,14 @@ On my stories index view template, where I want the buttons to appear, I add my 
 
 ```html
 <my-pagination
-      all-items="stories.filteredStories"
-      current-items="stories.displayedItems"
+      all-items="ctrl.filteredStories"
+      current-items="ctrl.displayedItems"
       items-per-page=12
       ></my-pagination>
 
 ```
 
-You'll notice `<my-pagination>` has three attributes:  `all-items`, `current-items`, and `items-per-page`.  
+You'll notice `<my-pagination>` has three attributes:  `all-items`, `current-items`, and `items-per-page`.  Because I want the directive to be reusable, I am using an **isolate scope**.  This means the directive will not have access to the scope of any parent controller on the page, and therefore cannot directly read the value of `ctrl.filteredStories`, which is the collection I want to paginate.  By using the above syntax, I am creating a 2-way binding with the `ctrl.filteredStories` property in the stories controller's scope.  For more on isolate scopes in custom directives (and custom directives in general), check out Dan Wahlin's excellent lesson [here](http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope).
 
 
 
