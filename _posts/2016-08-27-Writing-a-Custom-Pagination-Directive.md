@@ -157,7 +157,9 @@ On my stories index view template, where I want the buttons to appear, I add my 
 
 You'll notice `<my-pagination>` has three attributes:  `all-items`, `current-items`, and `items-per-page`.  Because I want the directive to be reusable, I am using an **isolate scope**.  This means the directive will not have access to the scope of any parent controller on the page, and therefore cannot directly read the value of `ctrl.filteredStories`, which is the collection I want to paginate.  By using the above syntax, I am creating a 2-way binding with the `ctrl.filteredStories` property in the stories controller's scope.  For more on isolate scopes in custom directives (and custom directives in general), check out Dan Wahlin's excellent lesson [here](http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope).
 
-I've added an additional property `ctrl.displayedItems` onto my original stories controller as well.  Like the `ctrl.filteredStories`, this is 2-way bound to my directive.  The default value in the stories controller is:
+I've added the additional property `ctrl.displayedItems` onto my original stories controller as well.  Like the `ctrl.filteredStories`, this is 2-way bound to my pagination directive. Although the pagination directive's controller will calculate the value of `displayedItems`, this must still be accessible on the stories controller scope, so that it can be used with `ng-repeat` as discussed earlier.
+
+However, the default value set in the stories controller is:
 
 ```javascript
 ctrl.displayedStories = [];
