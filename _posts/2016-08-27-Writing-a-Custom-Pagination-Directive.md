@@ -144,7 +144,7 @@ When added to a view, the pagination directive element will render html for the 
     </div>
 ```  
 
-On my stories index view template, where I want the buttons to appear, I add my new pagination directive element:
+On my stories index view template, where I want the buttons to appear, I added my new pagination directive element:
 
 ```html
 <my-pagination
@@ -155,17 +155,17 @@ On my stories index view template, where I want the buttons to appear, I add my 
 
 ```
 
-You'll notice `<my-pagination>` has three attributes:  `all-items`, `current-items`, and `items-per-page`.  Because I want the directive to be reusable, I am using an **isolate scope**.  This means the directive will not have access to the scope of any parent controller on the page, and therefore cannot directly read the value of `ctrl.filteredStories`, which is the collection I want to paginate.  By using the above syntax, I am creating a 2-way binding with the `ctrl.filteredStories` property in the stories controller's scope.  For more on isolate scopes in custom directives (and custom directives in general), check out Dan Wahlin's excellent lesson [here](http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope).
+You'll notice `<my-pagination>` has three attributes:  `all-items`, `current-items`, and `items-per-page`.  Because I wanted the directive to be reusable, I chose to use an **isolate scope**.  This means the directive will not have access to the scope of any parent controller on the page, and therefore cannot directly read the value of `ctrl.filteredStories`, which is the collection to be paginated.  The above syntax creates a 2-way binding with the `ctrl.filteredStories` property in the stories controller's scope.  For more on isolate scopes in custom directives (and custom directives in general), check out Dan Wahlin's excellent lesson [here](http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope).
 
-I've added the additional property `ctrl.displayedItems` onto my original stories controller as well.  Like `ctrl.filteredStories`, this is 2-way bound to my pagination directive. Although the pagination directive's controller will calculate the value of `displayedItems`, this must still be accessible on the stories controller scope, so that it can be used with `ng-repeat` as discussed earlier.
+I also added the additional property `ctrl.displayedItems` onto my original stories controller.  Like `ctrl.filteredStories`, this is 2-way bound to my pagination directive (see above). Although the pagination directive's controller will calculate the value of `ctrl.displayedItems`, this must still be accessible on the stories controller scope, so that it can be used with `ng-repeat` as demonstrated earlier.
 
-However, the default value set in the stories controller is:
+The default value set in the stories controller is:
 
 ```javascript
 ctrl.displayedStories = [];
 ```
 
-*(Side note: Setting this default value to be an empty array actually prevents the page from flashing when it loads, as `ng-repeat` adds items to the DOM before Angular's other directives are linked to the html.)*
+*(Side note: Setting this default value to be an empty array actually prevents the page from flashing when it loads, as `ng-repeat` adds items to the DOM before Angular's other directives are linked to the html.  Meaning, the `ng-repeat` will execute and display whatever has been passed in before the pagination occurs.)*
 
 Inside of my pagination directive file, I bind the the values to the directive's scope, and move the pagination logic from the stories controller into the pagination directive's own controller:
 
@@ -210,6 +210,80 @@ function MyPagination() {
     };
 }
 ```
+
+## Resetting the page after filtering
+
+ Now, the only thing left to do is reset back to page 1 when filtering occurs.  To do this, I added a watcher:
+
+ ```javascript
+//if allItems changes (because a filter is run and
+//the value of ctrl.filteredStories changes)
+//pagination should reset
+
+$scope.$watch('allItems', function() {
+  $scope.currentPageNo = 1;
+  $scope.updateTotalPages();
+  $scope.paginate();
+ });
+ ``` 
+
+ And the full pagination directive file then looks like this:
+
+ ```javascript
+angular
+    .module('app')
+    .directive('myPagination', MyPagination);
+
+function MyPagination() {
+  return {
+      templateUrl: 'directives/page-buttons.html',
+      restrict:  'E',
+
+      scope: {
+        allItems: '=',
+        currentItems: '=',
+        itemsPerPage: '='
+      },
+
+      controller: function ($scope) {
+        $scope.currentPageNo = 1
+
+        $scope.previousPage = function () {
+          $scope.currentPageNo--;
+          $scope.paginate();
+        }
+
+        $scope.nextPage = function() {
+          $scope.currentPageNo++;
+          $scope.paginate();
+        }
+        
+        $scope.paginate = function () {
+          var begin = (($scope.currentPageNo - 1) * $scope.itemsPerPage);
+          var end = begin + $scope.itemsPerPage;
+          $scope.currentItems = $scope.allItems.slice(begin,end);
+        };
+
+        $scope.updateTotalPages = function(){
+          $scope.totalPages = Math.ceil($scope.allItems.length/$scope.itemsPerPage);
+        }
+
+
+        //if allItems changes (because a filter is run and
+        //the value of ctrl.filteredStories changes)
+        //pagination should reset
+        
+        $scope.$watch('allItems', function() {
+          $scope.currentPageNo = 1;
+          $scope.updateTotalPages();
+          $scope.paginate();
+        });
+        
+        $scope.paginate();
+      }
+    };
+}
+ ``` 
 
 
 
