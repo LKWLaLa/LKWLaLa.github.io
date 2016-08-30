@@ -108,11 +108,15 @@ With filtering moved into the controller and the result of that filtering passed
 <ul> 
 ```
 
-At that point in my logic, I realized there was still one more problem.  When a user types into the search input (or any filter), the pagination should begin at page one, regardless of the page the user is currently on.  If a user is on page 3, searches for stories about 'dogs', what if there are only 2 dog stories?  
+At that point in my logic, I realized there was still one more problem.  When a user types into the search input (or any filter), the pagination should begin at page 1, regardless of the page the user is currently on.  If a user is on page 3, searches for stories about 'dogs', what if there are only 2 dog stories?  
 
-To remedy this, it is worth noting I also wrote a resetPageData() method which I called at the end of refilter(), however ultimately this was implemented in a different way when I reached the final stage of this process: refactoring ALL of the above logic into a custom directive.
+To remedy this, it is worth noting I also wrote a resetPageData() method which I called at the end of refilter(), however I won't go into too much detail just yet.  Ultimately the page reset is achieved in different way at the final stage of this process: refactoring ALL of the above logic into a custom directive.
 
 # Refactoring into a custom directive
+
+So, after going through the steps above, I finally had working pagination!  The only problem left was that of separation of concerns.  The little voice in my head kept nagging; the controller shouldn't be responsible for all of this.  Pagination....  that feels like presentation logic.  It should be handled in the view, and ideally made into a reusable component.  What if I want pagination on other pages as well?  After more research, it seemed the best option would be refactoring this into a custom directive.
+
+ 
 
 
 
