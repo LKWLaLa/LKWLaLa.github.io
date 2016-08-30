@@ -116,7 +116,34 @@ To remedy this, it is worth noting I also wrote a resetPageData() method which I
 
 So, after going through the steps above, I finally had working pagination!  The only problem left was that of separation of concerns.  The little voice in my head kept nagging; the controller shouldn't be responsible for all of this.  Pagination....  that feels like presentation logic.  It should be handled in the view, and ideally made into a reusable component.  What if I want pagination on other pages as well?  After more research, it seemed the best option would be refactoring this into a custom directive.
 
- 
+## The pagination element
+
+I began by restricting my directive to "E" for an element.  
+
+```javascript
+angular
+    .module('app')
+    .directive('myPagination', MyPagination);
+
+function MyPagination() {
+  return {
+      templateUrl: 'directives/page-buttons.html',
+      restrict:  'E'
+      }
+``` 
+
+On my index view template, I added the element:
+
+```html
+<my-pagination
+      all-items="stories.filteredStories"
+      current-items="stories.displayedStories"
+      items-per-page=12
+      ></my-pagination>
+
+```
+
+
 
 
 
