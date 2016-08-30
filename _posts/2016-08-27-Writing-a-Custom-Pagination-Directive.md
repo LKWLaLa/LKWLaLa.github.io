@@ -32,7 +32,7 @@ ctrl.nextPage = function() {
 }
 ```  
 
-I'd execute `ctrl.paginate()` in my controller, so the first pagination would occur as soon as my controller was initialized for that view.  The `ctrl.displayedItems` value would be passed into `ng-repeat` to add only those items to the DOM.
+I'd execute `ctrl.paginate()` in my controller, so the first pagination would occur as soon as my controller was initialized for that view.  The `ctrl.displayedItems` value (from the first example) would be passed into `ng-repeat` to add only those items to the DOM.
 
 ```html
 <ul ng-repeat="story in ctrl.displayedItems">   
