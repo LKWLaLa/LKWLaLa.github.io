@@ -55,7 +55,7 @@ this.updateStory = function (id, author, body) {
    };
 ```  
 
-And with that, (as well as adding the `accepts_nested_attributes_for` in my Story model in Rails) my Angular service was able to send the appropriate params to the API, and viola - the story update action is writing to two tables!
+And with that, (as well as adding the `accepts_nested_attributes_for` in my Story model in Rails) my Angular service was able to send the appropriate params to the API, and voila - the story update action is writing to two tables!
 
 
 
