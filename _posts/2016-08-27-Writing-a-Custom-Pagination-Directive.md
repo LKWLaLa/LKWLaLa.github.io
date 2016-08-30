@@ -155,7 +155,7 @@ On my stories index view template, where I want the buttons to appear, I add my 
 
 ```
 
-You'll notice <my-pagination> has three attributes:  `all-items`, `current-items`, and `items-per-page`.  
+You'll notice `<my-pagination>` has three attributes:  `all-items`, `current-items`, and `items-per-page`.  
 
 
 
