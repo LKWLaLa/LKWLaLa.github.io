@@ -132,13 +132,13 @@ function MyPagination() {
       }
 ``` 
 
-When added to a view, the element will render html for the next page and previous page buttons.  That is accessed by the templateUrl property, and the actual button html is located in my file 'directives/page-buttons.html', which looks like this:
+When added to a view, the pagination directive element will render html for the next page and previous page buttons.  That is accessed by the templateUrl property, and the actual button html is located in my file 'directives/page-buttons.html', which looks like this:
 
 ```html
     <div ng-if="currentPageNo < totalPages">
       <a ng-click="nextPage()">Next >></a>
     </div>
-    
+
     <div ng-if="currentPageNo > 1">
       <a ng-click="previousPage()"><< Back</a>
     </div>
