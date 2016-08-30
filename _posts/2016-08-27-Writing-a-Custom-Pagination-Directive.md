@@ -32,7 +32,7 @@ ctrl.nextPage = function() {
 }
 ```  
 
-I'd execute `ctrl.paginate()` in my controller, so the first pagination would occur as soon as my controller was initialized for that view.  The `ctrl.displayedItems` value (from the first example) would be passed into `ng-repeat` to add only those items to the DOM.
+I'd execute `ctrl.paginate()` in my controller, so the first pagination would occur as soon as my controller was initialized for that view.  The `ctrl.displayedItems` value (from the first code example) would be passed into `ng-repeat` to add only those items to the DOM.
 
 ```html
 <ul ng-repeat="story in ctrl.displayedItems">   
@@ -101,7 +101,7 @@ ctrl.displayedItems = ctrl.filteredStories.slice(begin,end);
 With filtering moved into the controller and the result of that filtering passed into the pagination method, the more desired value of `ctrl.displayedItems` can now be passed into the `ng-repeat`:
 
 ```html
-<ul ng-repeat="story in ctrl.displayedStories">   
+<ul ng-repeat="story in ctrl.displayedItems">   
     <li>
       <a ui-sref="story({ id: story.id })">{% raw %}{{story.title}}</a>
     </li>
