@@ -103,7 +103,7 @@ With filtering moved into the controller and the result of that filtering passed
 ```html
 <ul ng-repeat="story in ctrl.displayedItems">   
     <li>
-      <a ui-sref="story({ id: story.id })">{% raw %}{{story.title}}</a>
+      <a ui-sref="story({ id: story.id })">{{story.title}}</a>
     </li>
 <ul> 
 ```
