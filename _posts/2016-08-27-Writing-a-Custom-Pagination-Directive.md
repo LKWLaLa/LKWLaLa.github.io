@@ -37,7 +37,7 @@ I'd execute `ctrl.paginate()` in my controller, so the first pagination would oc
 ```html
 <ul ng-repeat="story in ctrl.displayedItems">   
     <li>
-      <a ui-sref="story({ id: story.id })">{% raw %}{{story.title}}{ % endraw %}</a>
+      <a ui-sref="story({ id: story.id })">{{story.title}}</a>
     </li>
 <ul> 
 ```
